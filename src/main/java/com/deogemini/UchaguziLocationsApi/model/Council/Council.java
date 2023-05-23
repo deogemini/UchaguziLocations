@@ -1,12 +1,12 @@
-package com.deogemini.UchaguziLocationsApi.model.District;
+package com.deogemini.UchaguziLocationsApi.model.Council;
 
 import com.deogemini.UchaguziLocationsApi.model.Region.Region;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="district")
-public class District {
+@Table(name="council")
+public class Council {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,11 +17,19 @@ public class District {
     @JoinColumn(name = "region_id")
     private Region region;
 
-    public District(){
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
+    }
+
+    public Council(){
         //Default Constructor
     }
 
-    public District(Long id, String name) {
+    public Council(Long id, String name) {
         this.id = id;
         this.name = name;
     }

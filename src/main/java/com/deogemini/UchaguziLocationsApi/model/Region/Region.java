@@ -1,6 +1,6 @@
 package com.deogemini.UchaguziLocationsApi.model.Region;
 
-import com.deogemini.UchaguziLocationsApi.model.District.District;
+import com.deogemini.UchaguziLocationsApi.model.Council.Council;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,7 +15,7 @@ public class Region {
 
     // One-to-many relationship with District
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<District> districts;
+    private List<Council> districts;
 
     public Region(){
         //Default Constructor
